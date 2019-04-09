@@ -1,0 +1,11 @@
+---------------------------------
+          LOAN TERMS
+---------------------------------
+Loan Amount:          150000
+Interest Rate:         4.00%
+Term:               15 years
+---------------------------------
+
+Monthly payment is:      1109.53
+Total interest is:      49715.74
+Total amount paid is:  199715.74
