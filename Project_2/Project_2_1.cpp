@@ -30,18 +30,21 @@ The magic of the formula is that the bank keeps charging the interest rate on th
 fully paid off by the end of the term while the borrower pays a fixed amount. 
 */
 #include <stdio.h>
+#include <math.h>
 int main(void){
-	int loan,rate,term,monthly,interest,paid,months;
-	printf({"--------------------------------\n\tLOAN TERMS\n--------------------------------\nLoan Amount:\t\t"});
+	int months,term;
+	float rate,monthly,interest,paid,loan;
+	printf("--------------------------------\n\tLOAN TERMS\n--------------------------------\nLoan Amount:\t\t");
 	scanf("%d",&loan);
 	printf("Interest Rate:\t\t");
 	scanf("%d",&rate);
 	printf("Term:\t\t\t");
 	scanf("%d",&term);
-	
-	rate*=.12;
+	//calculations
+	rate*=.01;
+	rate=(float)rate/12;
 	months=term*12;
-	monthly=loan*rate*(1+rate)^months /(((1+rate)^months)-1);
-	
-	printf("--------------------------------\n\nMonthly payment is: \t%d\nTotal interest is:\t%d\nTotal amount paid is\t%d",monthly,interest,paid);
+	monthly=(float)((loan*rate*(pow((1+rate),months)))/((pow((1+rate),months))-1));
+	//results
+	printf("--------------------------------\n\nMonthly payment is: \t%f\nTotal interest is:\t%d\nTotal amount paid is:\t%d",monthly,interest,paid);
 }
